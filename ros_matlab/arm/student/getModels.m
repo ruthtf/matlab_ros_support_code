@@ -8,12 +8,11 @@ function models = getModels(optns)
 % Output: (gazebo_msgs/GetWorldPropertiesResponse cell): models
 %--------------------------------------------------------------------------
     % TODO: 01 Get robot handle
-    
+    r = optns{"rHandle"};
     
     % TODO: 02 Create model_client_msg 
-
-    
+    mod_req = rosmessage(r.get_models_client); 
+   
     % TODO: 03 Call client 
-
-
+    models = call(r.get_models_client, mod_req);
 end
